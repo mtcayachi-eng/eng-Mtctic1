@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>يحيى عبد الهادي — Sopica Remorques</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+:root{--bg:#070b1a;--bg2:#0e1633;--card:rgba(255,255,255,.045);--line:rgba(212,175,55,.28);--gold:#d4af37;--gold2:#f3d98b;--text:#f4efe1;--mute:#a9a79b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;min-height:100vh;font-family:'Tajawal',system-ui,'Segoe UI',Tahoma,sans-serif;color:var(--text);
+background:radial-gradient(900px 500px at 50% -10%,#1b2a63 0%,transparent 60%),radial-gradient(600px 400px at 100% 100%,#2a2108 0%,transparent 60%),var(--bg);
+display:flex;justify-content:center}
+.app{width:100%;max-width:430px;padding:28px 20px 36px;animation:in .8s ease both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero{text-align:center;padding:30px 18px 24px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.avatar{width:128px;height:128px;margin:0 auto 18px;border-radius:50%;padding:4px;background:conic-gradient(from 0deg,var(--gold),#fff3c4,var(--gold),#8a6d17,var(--gold));box-shadow:0 0 28px rgba(212,175,55,.45),0 0 70px rgba(212,175,55,.18);animation:glow 3.5s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 38px rgba(243,217,139,.65),0 0 90px rgba(212,175,55,.28)}}
+.avatar>div{width:100%;height:100%;border-radius:50%;background:#0b1230 center/cover no-repeat;display:grid;place-items:center;font:800 40px/1 'Tajawal',sans-serif;color:var(--gold2);letter-spacing:2px}
+h1{margin:0 0 6px;font-size:26px;font-weight:800;background:linear-gradient(90deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{margin:0;color:var(--text);font-weight:500;font-size:15px}
+.role b{color:var(--gold);font-weight:700}
+.bio{margin:14px auto 0;color:var(--mute);font-size:14px;line-height:1.8;max-width:30ch}
+.save{width:100%;margin:20px 0 14px;border:0;border-radius:18px;padding:17px;font:800 17px 'Tajawal',sans-serif;color:#1a1403;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#f3d98b,#d4af37 55%,#a9831c);box-shadow:0 10px 28px rgba(212,175,55,.35);transition:transform .15s}
+.save:active{transform:scale(.97)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 8px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--text);text-decoration:none;font:700 14px 'Tajawal',sans-serif;cursor:pointer;backdrop-filter:blur(6px);transition:.2s}
+.btn:hover,.btn:active{border-color:var(--gold);background:rgba(212,175,55,.1);transform:translateY(-2px)}
+.btn svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.btn.wa svg{stroke:#4be08a}
+.social{display:flex;justify-content:center;gap:12px;margin:22px 0 6px}
+.social a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--gold2);text-decoration:none;font:800 15px 'Tajawal',sans-serif;background:var(--card);transition:.2s}
+.social a:hover{background:var(--gold);color:#1a1403}
+.foot{text-align:center;color:var(--mute);font-size:12px;margin-top:18px}
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,6,16,.78);backdrop-filter:blur(8px)}
+.modal.open{display:flex;animation:in .3s ease both}
+.sheet{width:100%;max-width:340px;background:linear-gradient(160deg,#121c42,#0a1027);border:1px solid var(--gold);border-radius:26px;padding:24px;text-align:center;box-shadow:0 0 50px rgba(212,175,55,.25)}
+.sheet h2{margin:0 0 4px;font-size:19px;color:var(--gold2)}
+.sheet p{margin:0 0 16px;color:var(--mute);font-size:13px}
+#qr{background:#fff;border-radius:18px;padding:14px;width:230px;height:230px;margin:0 auto 18px;display:grid;place-items:center}
+#qr svg{width:100%;height:100%;display:block}
+.close{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:14px;padding:11px 28px;font:700 14px 'Tajawal',sans-serif;cursor:pointer}
+textarea{width:100%;height:150px;direction:ltr;border-radius:12px;border:1px solid var(--line);background:#070b1a;color:var(--text);padding:10px;font:12px monospace;margin-bottom:14px}
+.toast{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%) translateY(30px);background:var(--gold);color:#1a1403;font-weight:700;padding:11px 20px;border-radius:30px;opacity:0;transition:.3s;pointer-events:none;z-index:60;font-size:14px}
+.toast.show{opacity:1;transform:translateX(-50%)}
+</style>
+</head>
+<body>
+<main class="app">
+  <section class="hero">
+    <div class="avatar"><div id="photo">YA</div></div>
+    <h1>يحيى عبد الهادي</h1>
+    <p class="role"><b>المدير العام</b> · Sopica Remorques</p>
+    <p class="bio">نصنع المقطورات بمعايير الجودة والمتانة، ونرافق مشاريعكم بحلول نقل موثوقة تدوم لسنوات.</p>
+  </section>
+
+  <button class="save" id="saveBtn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+    احفظ رقمي في هاتفك
+  </button>
+
+  <div class="grid">
+    <a class="btn" id="call" href="#"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>اتصال مباشر</a>
+    <a class="btn wa" id="wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M8.5 9.5c.3 2 2.5 4.2 4.5 4.6l1.3-1.2-1.7-.9-.7.6c-.8-.3-1.7-1.2-2-2l.6-.7-.9-1.7z"/></svg>واتساب</a>
+    <a class="btn" id="map" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>موقع الشركة</a>
+    <button class="btn" id="qrBtn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v1M14 20h1M18 18h3v3h-3z"/></svg>رمز QR</button>
+  </div>
+
+  <div class="social">
+    <a id="fb" href="#" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+    <a id="ml" href="#" aria-label="Email">@</a>
+  </div>
+  <div class="foot">Sopica Remorques · بطاقة أعمال رقمية</div>
+</main>
+
+<div class="modal" id="qrModal"><div class="sheet">
+  <h2>امسح الرمز</h2><p>وجّه كاميرا هاتفك نحو الرمز لفتح بطاقتي</p>
+  <div id="qr"></div><button class="close" data-close>إغلاق</button>
+</div></div>
+
+<div class="modal" id="vcModal"><div class="sheet">
+  <h2>ملف جهة الاتصال</h2><p>انسخ النص واحفظه بامتداد ‎.vcf‎ ثم افتحه لإضافة الجهة.</p>
+  <textarea id="vcText" readonly></textarea>
+  <button class="close" id="copyBtn">نسخ</button> <button class="close" data-close>إغلاق</button>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== عدّل بياناتك هنا ===== */
+const P = {
+  first: "يحيى", last: "عبد الهادي",
+  title: "General Manager", org: "Sopica Remorques",
+  phone: "+213560963508",          // الرقم الدولي بدون مسافات
+  email: "Conpicam@yahoo.fr",
+  website: "",
+  maps: "https://maps.app.goo.gl/7E28egBA3pQ7dbc9A",
+  facebook: "https://www.facebook.com/SopicaCompany/",
+  instagram: "https://instagram.com/",
+  linkedin: "https://linkedin.com/",
+  photo: "data:image/jpeg;base64,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"                         // ضع رابط data:image/... لصورتك الشخصية
+};
+const $ = id => document.getElementById(id);
+const toast = m => { const t=$('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2600); };
+
+$('call').href = 'tel:' + P.phone;
+$('wa').href = 'https://wa.me/' + P.phone.replace(/\D/g,'');
+$('map').href = P.maps; $('fb').href = P.facebook;
+$('ml').href = 'mailto:' + P.email;
+if (P.photo) { $('photo').style.backgroundImage = 'url("' + P.photo + '")'; $('photo').textContent = ''; }
+
+/* ===== vCard ===== */
+function buildVCard() {
+  return ['BEGIN:VCARD','VERSION:3.0',
+    'N:' + P.last + ';' + P.first + ';;;',
+    'FN:' + P.first + ' ' + P.last,
+    'ORG:' + P.org, 'TITLE:' + P.title,
+    'TEL;TYPE=CELL,VOICE:' + P.phone,
+    'EMAIL;TYPE=INTERNET:' + P.email,
+    P.website ? 'URL:' + P.website : '',
+    'END:VCARD'].filter(Boolean).join('\r\n');
+}
+function openVcFallback(text) { $('vcText').value = text; $('vcModal').classList.add('open'); }
+function classicDownload(text) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], {type:'text/vcard;charset=utf-8'}));
+  a.download = 'yahya-abdelhadi.vcf';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+$('saveBtn').onclick = async () => {
+  const text = buildVCard();
+  let ok = false;
+  try {
+    const dl = await claude.use('downloads');
+    if (dl) { await dl.save({filename: 'yahya-abdelhadi.vcf', data: text}); toast('تم الحفظ ✓'); return; }
+  } catch (e) { if (e && e.code === 'declined') return; }
+  try { classicDownload(text); ok = true; } catch (e) {}
+  openVcFallback(text);           // خطة احتياطية: نسخ النص يدوياً
+};
+$('copyBtn').onclick = async () => {
+  try { await navigator.clipboard.writeText($('vcText').value); toast('تم النسخ ✓'); }
+  catch (e) { $('vcText').select(); toast('حدّد النص وانسخه'); }
+};
+
+/* ===== QR ===== */
+$('qrBtn').onclick = () => {
+  const qr = qrcode(0, 'M');
+  qr.addData(location.href.split('#')[0]); qr.make();
+  $('qr').innerHTML = qr.createSvgTag({scalable: true, margin: 0});
+  $('qrModal').classList.add('open');
+};
+document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => {
+  if (e.target === m || e.target.hasAttribute('data-close')) m.classList.remove('open');
+}));
+</script>
+</body>
+</html>
